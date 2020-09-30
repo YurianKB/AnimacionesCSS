@@ -1,0 +1,143 @@
+.nomargin{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.slideInLeft {
+  font-size: 60px;
+  animation-duration: 15s;
+  animation-name: slideinLeft;
+  animation-iteration-count: infinite;
+}
+
+.slideInRight{
+  font-size: 60px;
+  animation-duration: 10s;
+  animation-name: slideinRight;
+  animation-iteration-count: infinite;
+}
+
+.flashF{
+  font-size: 60px;
+  animation-duration: 1s;
+  animation-name: flashF;
+  animation-delay: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.flashS{
+  font-size: 60px;
+  animation-duration: 1s;
+  animation-name: flashS;
+  animation-delay: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.flashimg{
+  animation-duration: 1s;
+  animation-name: flashS;
+  animation-delay: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.flashT{
+  font-size: 60px;
+  animation-duration: 1s;
+  animation-name: flashT;
+  animation-delay: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.fadeInUp {
+  font-size: 60px;
+  animation-duration: 1s;
+  animation-name: fadeInUp;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes slideinLeft {
+  from {
+    margin-left: 100%;
+    width: 100%
+  }
+
+  to {
+    margin-left: -100%;
+    width: 100%;
+  }
+}
+
+@keyframes slideinRight {
+  from {
+    margin-left: 0%;
+    width: 300%
+  }
+
+  to {
+    margin-left: 100%;
+    width: 100%;
+  }
+}
+
+@keyframes flashF {
+  from,
+  0% {
+  color: transparent;
+}
+  to, 
+  100% {
+  color: #000;
+  }
+}
+
+@keyframes flashS {
+  from,
+  40% {
+  color: transparent;
+}
+  to, 
+  60% {
+  color: #000;
+  }
+}
+
+@keyframes flashimg {
+  from,
+  40% {
+  display: none;
+}
+  to, 
+  60% {
+  display: block;
+  }
+}
+
+@keyframes flashT {
+  from,
+  70% {
+  color: transparent;
+}
+  to{
+  color: #000;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+

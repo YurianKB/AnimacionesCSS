@@ -1,0 +1,49 @@
+@media screen and (max-width: 1199px){
+
+	.loginBannerArea{margin-bottom: 100px;}
+}
+@media screen and (max-width: 991px){
+
+	.carousel-container .carouselItem:nth-last-child(1) img{max-width: 100%;}
+	.logoContainer .YoutubeWelcomelogo{display: none;}
+	.logoContainer .welcome{max-width: 100px;left: 12%;top: -120px;}
+	.flagsContainer{margin-top: 100px;}
+
+	.profileArea
+}
+@media screen and (max-width: 767px){
+
+	.formContainer{transform: translate(-50%, 60%);}
+}
+@media screen and (max-width: 575px){
+
+	.logoContainer .welcome{max-width:80px;left: 17%;top: -90px;}
+
+	.formContainer{transform: translate(-50%, 40%);}
+}
+@media screen and (min-width: 0px) and (max-width: 413px){
+
+	.logoContainer .welcome{max-width:60px;top: -60px;}
+	.flagsContainer{margin-top: 50px;}
+	.flagsContainer .countriesFlags h5{font-size: 2rem;}
+	.flagsContainer .countriesFlags li{margin-right: 15px;}
+
+	.formContainer{transform: translate(-50%, 30%);}
+}
+
+
+@media screen and (min-width: 576px) and (max-width: 767px){
+
+
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
+
+}
+@media screen and (min-width: 992px) and (max-width: 1199px){
+
+	.logoContainer .welcome{max-width: 120px;top: -90px;left: -190px;}
+	.logoContainer .YoutubeWelcomelogo{max-width: 428px;}
+}
+@media screen and (min-width: 1200px){
+
+}

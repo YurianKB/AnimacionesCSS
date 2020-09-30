@@ -1,0 +1,15 @@
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+ img {
+    width: 320px;
+  }
+
+@media (max-height: 640px) {
+ img {
+    width: 480px;
+  }

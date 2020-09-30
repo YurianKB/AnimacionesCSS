@@ -1,0 +1,604 @@
+@charset "UTF-8";
+
+/* ------ Fonts Start ------ */
+@font-face {
+	font-family: YouTubeSansBold;
+	src: url('../fonts/YouTubeSans-Bold.ttf');
+}
+@font-face {
+	font-family: YouTubeSansRegular;
+	src: url('../fonts/YouTubeSans-Regular.ttf');
+}
+@font-face {
+
+	font-family: RobotoRegular;
+	src: url('../fonts/Roboto-Regular.ttf');
+}
+@font-face {
+
+	font-family: RobotoMedium;
+	src: url('../fonts/Roboto-Medium.ttf');
+}
+/* ------ Fonts End ------*/
+
+/* ------ Global Styles Start ------*/
+:root{
+
+	--YT_SansBold: "YouTubeSansBold", sans-serif;
+	--YT_SansRegular: "YouTubeSansRegular", sans-serif;
+	--R_regular: "RobotoRegular", sans-serif;
+	--R_medium: "RobotoMedium", sans-serif;
+}
+body {
+
+	font-family: var(--R_regular), sans-serif;
+	color: #000;
+}
+p{
+	color: #000;
+	font-weight: 400;
+	font-size: 1rem;
+}
+button, button:focus{
+
+	cursor: pointer;
+	outline: none;
+	border: none;
+}
+a:hover{
+	text-decoration: none;
+}
+input, textarea{
+
+	outline: none !important;
+	background: transparent;
+	border: none;
+	resize: none;
+}
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 30px white inset;
+}
+.bodyMain{
+
+	display: block;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	z-index: 0;
+	background: #f2f2f2;
+}
+.mainBtn{
+
+	display: inline-block;
+	position: relative;
+	background: #E82427;
+	color: #fff;
+	text-align: center;
+	padding: 10px 20px;
+	font-family: var(--YT_SansRegular);
+	text-transform: uppercase;
+}
+.YouTubeLoader{
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 5;
+	background: #2c2c2c;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.YouTubeLoader .YouTubeLogoBox{
+
+	position: relative;
+	overflow: hidden;
+	width: 80px;
+	height: 56px;
+	max-height: 56px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	-webkit-transition: all .55s ease;
+	transition: all .55s ease;
+}
+.YouTubeLoader .YouTubeLogoBox.active{
+
+	width: 280px;
+	max-width: 280px;
+}
+.YouTubeLoader .YouTubeIso{
+
+	width: 80px;
+	background: #2c2c2c;
+	transform: scale(0);
+	-webkit-transition: all .2s linear;
+	transition: all .2s linear;
+	position: absolute;
+	left: 0;
+	z-index: 2;
+}
+.YouTubeLoader .YouTubeIso.active{
+
+	transform: scale(1);
+}
+.YouTubeLoader .YouTubeLogo{
+
+	position: absolute;
+	right: 0;
+	z-index: 0;
+	max-width: 190px;
+	height: 100%;
+	visibility: hidden;
+}
+.YouTubeLoader .YouTubeLogoBox.active .YouTubeLogo{
+
+	visibility: visible;
+}
+.container{
+
+	max-width: 1140px !important;
+}
+.secTitle{
+
+	font-family: var(--YT_SansBold);
+	color: #000;
+	font-size: 2.5rem;
+}
+/* ------ Global Styles End ------*/
+
+/* ------ Header Styles Start ------*/
+.navMenu{
+
+	position: fixed;
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+	padding: 20px 0;
+	top: 0;
+	left: 0;
+	background: #f2f2f2;
+	z-index: 3;
+}
+.navMenu .logo{
+
+	width: 151px;
+	display: inline-block;
+	z-index: 1;
+}
+.burgerMenuButton{
+
+	display: inline-block;
+	z-index: 1;
+}
+.burgerMenu{
+
+	position: fixed;
+	top: 0;
+	right: -100%;
+	background: #2c2c2c;
+	-webkit-transition: all .3s linear;
+	transition: all .3s linear;
+}
+.burgerMenu.active{
+
+	right: 0;
+}
+.menuBox{
+
+	height: 100vh;
+	max-height: 100vh;
+	padding: 0 0 120px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.burgerMenu .navigationLinks{
+
+	display: block;
+	padding: 0;
+	margin: 0 0 70px;
+	list-style: none;
+}
+.burgerMenu .navigationLinks > li{
+
+	display: block;
+	padding: 20px 0;
+	border-bottom: 1px solid #979797;
+}
+.burgerMenu .navigationLinks > li:nth-last-child(1){
+
+	border-bottom: none;
+}
+.burgerMenu .navigationLinks > li > a{
+
+	display: block;
+	font-family: var(--YT_SansRegular);
+	color: #fff;
+}
+.burgerMenu .aboutLinks{
+
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.burgerMenu .aboutLinks .Logo{
+
+	display: block;
+	margin-bottom: 30px;
+}
+.burgerMenu .aboutLinks li{
+
+	display: block;
+	line-height: 24px;
+	margin-bottom: 10px;
+}
+.burgerMenu .aboutLinks li > a{
+
+	display: block;
+	color: #909090;
+	font-family: var(--R_regular);
+	font-weight: 400;
+}
+.languageBox{
+
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	margin-top: 50px;
+}
+.languageBox a{
+
+	display: flex;
+	align-items: center;
+	font-family: var(--R_regular);
+	font-weight: inherit;
+	color: #aaaaaa !important;
+}
+.languageBox a > img{
+
+	margin-right: 6px;
+}
+.languageBox select{
+
+	background: transparent !important;
+	max-width: 197px;
+	border: none;
+	border-bottom: 1px solid #aaa !important;
+	border-radius: 0;
+	padding: 4px 0;
+	height: inherit;
+	font-family: var(--R_regular);
+	font-weight: inherit;
+	color: #aaaaaa !important;
+	box-shadow: none !important;
+	margin-left: 50px;
+	margin-right: 15px;
+}
+.languageBox select > option{
+
+	color: #666666;
+}
+.menuBox::-webkit-scrollbar {width: 8px;}
+.menuBox::-webkit-scrollbar-track {background: #2c2c2c; border-radius: 45px;}
+.menuBox::-webkit-scrollbar-thumb{ background: #2c2c2c; border-radius: 45px;}
+.menuBox::-webkit-scrollbar-thumb:hover {background: #2c2c2c;}
+.menuSpace{
+
+	padding: 100px 0 0;
+	top: 0;
+	right: -100%;
+	background: #2c2c2c;
+	-webkit-transition: all .3s linear;
+	transition: all .3s linear;
+}
+.menuSpace.active{
+
+	right: 0;
+}
+/* ------ Header Styles End ------*/
+
+/* ------ Welcome Banner Area Styles Start ------*/
+.welcomeBannerArea{
+
+	min-height: 100vh;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.carousel-container {
+
+	width: 100%;
+	max-width: 100%;
+	position: relative;
+}
+.carousel-container .carouselItem{
+
+	position: absolute;
+	transform: translateY(100%);
+	-webkit-transition: all .3s linear;
+	transition: all .3s linear;
+}
+.carousel-container .carouselItem:nth-last-child(4) img, .carousel-container .carouselItem:nth-last-child(2) img{
+
+	max-width: 80%;
+	margin: 0 auto;
+}
+.carousel-container .carouselItem:nth-last-child(1) img{
+
+	max-width: 80%;
+	margin: 0 auto 80px;
+}
+.carousel-container .carouselItem.active{
+	
+	position: relative;
+	transform: translateY(0);
+}
+.logoANDflags{
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+}
+.logoContainer{
+
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -70%);
+}
+.logoContainer .YoutubeWelcomelogo{
+
+	width: 100%;
+	max-width: 100%;
+	margin-top: 60px;
+}
+.logoContainer .welcome{
+
+	position: absolute;
+	top: -90px;
+	left: -180px;
+	animation: 10s rotate infinite linear;
+	max-width: 120px;
+}
+@-webkit-keyframes rotate {
+     to { transform: rotate(360deg); }
+}
+@-moz-keyframes rotate {
+     to { transform: rotate(360deg); }
+}
+@keyframes rotate {
+     to { transform: rotate(360deg); }
+}
+.flagsContainer{
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	overflow: hidden;
+	z-index: 1;
+	margin-top: 130px;
+	margin-bottom: 50px;
+}
+.flagsContainer .countriesFlags{
+
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+	-webkit-transition: all .2s linear;
+	transition: all .2s linear;
+}
+.flagsContainer .countriesFlags h5{
+
+	font-family: var(--YT_SansRegular);
+	font-weight: bold;
+	font-size: 2.5rem;
+	margin-bottom: 30px;
+}
+.flagsContainer .countriesFlags li{
+
+	display: inline-block;
+	margin-right: 30px;
+	cursor: pointer;
+}
+.flagsContainer .countriesFlags li:nth-last-child(1){
+
+	margin-right: 0;
+}
+.flagsContainer .countriesFlags li > img{
+
+	max-width: 100%;
+	width: 37.32px;
+	height: 37.32px;
+}
+/* ------ Welcome Banner Area Styles End ------*/
+
+/* ------ Login Banner Area Styles Start ------*/
+.loginBannerArea{
+
+	min-height: 100vh;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin-top: 74px;
+	margin-bottom: 300px;
+}
+.loginBannerArea::-webkit-scrollbar {width: 8px;}
+.loginBannerArea::-webkit-scrollbar-track {background: #e1e1e1; border-radius: 45px;}
+.loginBannerArea::-webkit-scrollbar-thumb{ background: #c1baba; border-radius: 45px;}
+.loginBannerArea::-webkit-scrollbar-thumb:hover {background: #989696;}
+.formContainer{
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 90%);
+	z-index: 1;
+	margin-bottom: 50px;
+}
+.formContainer .loginForm span{
+
+	font-family: var(--YT_SansRegular);
+	color: #6A6A66;
+	font-weight: bold;
+	margin: 0 auto 30px;
+	display: block;
+	max-width: 320px;
+}
+.iBox{
+
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+	margin-bottom: 40px;
+}
+.iBox input{
+
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	padding: 10px 12px;
+	background: #fff;
+	color: #6a6a66;
+	border: 1px solid #8E8E8C;
+	-webkit-transition: all .2s linear;
+	transition: all .2s linear;
+}
+.iBox input:focus{
+
+	border: 1px solid #1A73E8;
+}
+.iBox input.correct{
+
+	border: 1px solid #282828;
+}
+.iBox input.incorrect{
+
+	border: 1px solid #ff0000;
+}
+.iBox span{
+
+	position: absolute;
+	top: 14px;
+	right: 35px;
+	width: 18px;
+	height: 18px;
+	background-size: 100% !important;
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+}
+.iBox input.correct ~ span{
+
+	background: url(../img/welcomeBanner/iconCheck.svg);
+}
+.iBox input.incorrect ~ span{
+
+	background: url(../img/welcomeBanner/iconError.svg);
+}
+.formContainer .mainBtn{
+
+	width: 100%;
+}
+/* ------ Login Banner Area Styles End ------*/
+
+/* ------ Home Stream Area Styles Start ------*/
+.homeStreamArea{
+
+	position: relative;
+	padding-top: 74px;
+	height: 100vh;
+}
+.homeStreamArea p{
+
+	font-family: var(--YT_SansRegular);
+	font-weight: bold;
+	color: #6a6a66;
+	margin-top: 50px;
+}
+/* ------ Home Stream Area Styles End ------*/
+
+/* ------ Profile Area Styles Start ------*/
+.profileArea{
+
+	position: relative;
+	display: block;
+	padding-top: 74px;
+	height: 100vh;
+}
+.profileFigure{
+
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	max-width: 200px;
+}
+.profileInfo{
+
+	position: relative;
+	display: block;
+	margin-top: 60px;
+}
+.profileInfo .data{
+
+	position: relative;
+	display: block;
+	margin: 60px 0 0;
+	padding: 0;
+	list-style: none;
+
+}
+.profileInfo .data li{
+
+	position: relative;
+	display: block;
+	margin-bottom: 40px;
+
+}
+.profileInfo .data li:nth-last-child(1){
+
+	margin-bottom: 0;
+
+}
+.profileInfo .data li > label{
+
+	display: block;
+	font-family: var(--YT_SansBold);
+	color: #909090;
+	font-size: .75rem;
+	text-transform: uppercase;
+
+}
+.profileInfo .data li > span {
+
+	display: block;
+	font-family: var(--R_regular);
+	font-weight: 400;
+
+}
+.profileInfo a{
+
+	display: block;
+	font-family: var(--YT_SansBold);
+	color: #ec2024;
+	font-size: .75rem;
+	text-transform: uppercase;
+	text-decoration: underline;
+	margin-top: 70px;
+}
+/* ------ Profile Area Styles End ------*/
